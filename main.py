@@ -23,7 +23,7 @@ def get_preservica_checksums(collection):
 
 
 # Reads .md5 file as text file, returns string
-def checksum_reader(path):
+def checksum_reader(path) -> str:
     with open(path) as file:
         hash = file.read()
         return hash
@@ -45,7 +45,7 @@ def get_local_checksums(directory):
 
 
 # Takes CSV files and returns dicts
-def csv_to_dict(csv_path):
+def csv_to_dict(csv_path) -> dict:
     dict = {}
     with open(csv_path, 'r') as hash_csv:
         for row in csv.reader(hash_csv):
